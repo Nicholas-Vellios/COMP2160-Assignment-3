@@ -5,16 +5,46 @@ using UnityEngine;
 public class Drive : MonoBehaviour
 {
     private Rigidbody carBody;
-    public float speed = 10;
-    public Vector3 movement;
+    public float driveSpeed = 20;
+    public float steerSpeed = 10;
+    public float driveAccel = 0.5f;
+    public float steerAccel = 0.3f;
+    public float maxSteerAngle = 1f;
+    private Vector3 movement;
+    private Vector3 steering;
+    private bool onGround = false;
     void Start()
     {
         carBody = GetComponent<Rigidbody>();
+        carBody.maxAngularVelocity = maxSteerAngle;
     }
 
     private void FixedUpdate()
     {
-        movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        carBody.AddForce(movement * speed);
+        if (onGround)
+        {
+            movement = new Vector3(0, 0, Input.GetAxis("Vertical"));
+            steering = new Vector3(0, Input.GetAxis("Horizontal") * Input.GetAxis("Vertical"), 0);
+            carBody.AddTorque(steering * steerSpeed * steerAccel);
+            carBody.AddRelativeForce(movement * driveSpeed * driveAccel);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onGround = true;
+            Debug.Log("ON THE GROUND");
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onGround = false;
+            Debug.Log("OFF THE GROUND");
+        }
     }
 }
