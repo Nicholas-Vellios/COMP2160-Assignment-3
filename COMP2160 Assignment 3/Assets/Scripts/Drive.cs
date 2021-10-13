@@ -32,7 +32,7 @@ public class Drive : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") && GameObject.FindWithTag("Wheel"))
         {
             onGround = true;
             Debug.Log("ON THE GROUND");
@@ -41,7 +41,7 @@ public class Drive : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") && GameObject.FindWithTag("Wheel"))
         {
             onGround = false;
             Debug.Log("OFF THE GROUND");
