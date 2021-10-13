@@ -223,10 +223,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 98510431838072755, guid: 167b8d0613f377e449ce2a7d86906432, type: 3}
-      propertyPath: m_MaterialTemplate
-      value: 
-      objectReference: {fileID: 2100000, guid: 6fca0da264b94b1419a1957f1aa74cb6, type: 2}
     - target: {fileID: 706223075552849985, guid: 167b8d0613f377e449ce2a7d86906432, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -398,22 +394,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4573570853300328286, guid: 38cf56efb3749424c8df0e149240af58, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573570853300328286, guid: 38cf56efb3749424c8df0e149240af58, type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573570853300328288, guid: 38cf56efb3749424c8df0e149240af58, type: 3}
-      propertyPath: driveSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573570853300328288, guid: 38cf56efb3749424c8df0e149240af58, type: 3}
-      propertyPath: steerSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6234349407109173930, guid: 38cf56efb3749424c8df0e149240af58, type: 3}
       propertyPath: m_Name
       value: Car
