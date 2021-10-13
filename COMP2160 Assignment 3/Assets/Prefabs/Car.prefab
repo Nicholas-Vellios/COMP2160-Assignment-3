@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 5173882743497472261}
   - component: {fileID: 2728916433375229399}
   - component: {fileID: 6831990391908833693}
-  - component: {fileID: 667519312}
+  - component: {fileID: 1031677412}
   m_Layer: 0
   m_Name: wheel_backRight
   m_TagString: Wheel
@@ -342,8 +342,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &667519312
-SphereCollider:
+--- !u!136 &1031677412
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -352,8 +352,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.29999998
+  m_Height: 0.59999996
+  m_Direction: 1
   m_Center: {x: 0.14999999, y: 0, z: 0}
 --- !u!1 &4020380186461066654
 GameObject:
@@ -366,7 +367,7 @@ GameObject:
   - component: {fileID: 4190175358390419717}
   - component: {fileID: 53287767624501911}
   - component: {fileID: 8191062557589723621}
-  - component: {fileID: 730356558}
+  - component: {fileID: 352439741}
   m_Layer: 0
   m_Name: wheel_frontLeft
   m_TagString: Wheel
@@ -438,8 +439,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &730356558
-SphereCollider:
+--- !u!136 &352439741
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -448,8 +449,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.29999998
+  m_Height: 0.59999996
+  m_Direction: 1
   m_Center: {x: 0.14999999, y: 0, z: 0}
 --- !u!1 &5460472820163406382
 GameObject:
@@ -545,7 +547,7 @@ GameObject:
   - component: {fileID: 6554553049142772795}
   - component: {fileID: 6202214408476186238}
   - component: {fileID: 5612837127107143177}
-  - component: {fileID: 613078113}
+  - component: {fileID: 1596600794}
   m_Layer: 0
   m_Name: wheel_frontRight
   m_TagString: Wheel
@@ -617,8 +619,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &613078113
-SphereCollider:
+--- !u!136 &1596600794
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -627,8 +629,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.29999998
+  m_Height: 0.59999996
+  m_Direction: 1
   m_Center: {x: 0.14999999, y: 0, z: 0}
 --- !u!1 &6234349407109173930
 GameObject:
@@ -698,11 +701,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34db50e1cf4b5fd4294c52135f60ae5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  driveSpeed: 100
-  steerSpeed: 50
+  driveSpeed: 40
+  steerSpeed: 20
   driveAccel: 0.5
   steerAccel: 0.3
-  maxSteerAngle: 1
+  maxSteerAngle: 1.5
 --- !u!65 &960094314
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -826,7 +829,7 @@ GameObject:
   - component: {fileID: 35366856955488995}
   - component: {fileID: 5851421979142145432}
   - component: {fileID: 1080954739832900439}
-  - component: {fileID: 911584156}
+  - component: {fileID: 1102554967}
   m_Layer: 0
   m_Name: wheel_backLeft
   m_TagString: Wheel
@@ -899,8 +902,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &911584156
-SphereCollider:
+--- !u!136 &1102554967
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -909,6 +912,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.29999998
+  m_Height: 0.59999996
+  m_Direction: 1
   m_Center: {x: 0.14999999, y: 0, z: 0}
