@@ -10,9 +10,11 @@ public class Drive : MonoBehaviour
     public float driveAccel = 0.5f;
     public float steerAccel = 0.3f;
     public float maxSteerAngle = 1f;
+    public float maxRotation = 85;
     private Vector3 movement;
     private Vector3 steering;
     private bool onGround = false;
+    private bool isFlipped = false;
     void Start()
     {
         carBody = GetComponent<Rigidbody>();
@@ -21,7 +23,8 @@ public class Drive : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (onGround)
+        CheckRotation();
+        if (onGround && isFlipped == false)
         {
             movement = new Vector3(0, 0, Input.GetAxis("Vertical"));
             steering = new Vector3(0, Input.GetAxis("Horizontal") * Input.GetAxis("Vertical"), 0);
@@ -32,7 +35,7 @@ public class Drive : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground") && GameObject.FindWithTag("Wheel"))
+        if (collision.gameObject.CompareTag("Ground"))
         {
             onGround = true;
             Debug.Log("ON THE GROUND");
@@ -41,10 +44,19 @@ public class Drive : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground") && GameObject.FindWithTag("Wheel"))
+        if (collision.gameObject.CompareTag("Ground"))
         {
             onGround = false;
             Debug.Log("OFF THE GROUND");
+        }
+    }
+
+    private void CheckRotation()
+    {
+         if (Vector3.Angle(transform.up, Vector3.up) > maxRotation)
+        {
+            isFlipped = true;
+            Debug.Log("CAR IS FLIPPED");
         }
     }
 }
