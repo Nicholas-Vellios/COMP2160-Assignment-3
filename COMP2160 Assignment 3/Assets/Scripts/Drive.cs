@@ -26,11 +26,16 @@ public class Drive : MonoBehaviour
         CheckRotation();
         if (onGround && isFlipped == false)
         {
-            movement = new Vector3(0, 0, Input.GetAxis("Vertical"));
-            steering = new Vector3(0, Input.GetAxis("Horizontal") * Input.GetAxis("Vertical"), 0);
-            carBody.AddTorque(steering * steerSpeed * steerAccel);
-            carBody.AddRelativeForce(movement * driveSpeed * driveAccel, ForceMode.Acceleration);
+            CarDrive();
         }
+    }
+
+    private void CarDrive()
+    {
+        movement = new Vector3(0, 0, Input.GetAxis("Vertical"));
+        steering = new Vector3(0, Input.GetAxis("Horizontal") * Input.GetAxis("Vertical"), 0);
+        carBody.AddTorque(steering * steerSpeed * steerAccel);
+        carBody.AddRelativeForce(movement * driveSpeed * driveAccel, ForceMode.Acceleration);
     }
 
     private void OnCollisionEnter(Collision collision)
